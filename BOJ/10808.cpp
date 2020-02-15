@@ -1,3 +1,5 @@
+// 간단한 자료구조
+
 #include <iostream>
 #include <algorithm>
 #include <string>
