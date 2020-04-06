@@ -1,4 +1,4 @@
-// dp 동전 
+// dp 동전 갯수
 
 #include <iostream>
 #include <algorithm>
