@@ -13,6 +13,8 @@ const int MAX = 1001;
 int visit[MAX][MAX][2] = {0,};
 int house[MAX][MAX];
 
+//상하좌우용
+
 int dx[4] = { 0, 0, -1, 1};
 int dy[4] = { 1, -1, 0, 0};
 int block;
@@ -20,7 +22,7 @@ int block;
 void bfs(int x, int y) {
     queue<pair<pair<int, int>,int>> q;
 
-    visit[x][y][1] = 1;
+    visit[x][y][1] = 1; 
     q.push(make_pair(make_pair(x, y),1));
 
     pair<pair<int, int>,int> a;
@@ -36,11 +38,11 @@ void bfs(int x, int y) {
             
 
             if( 0 <= nx && nx < N && 0 <= ny && ny < M) {
-                if(visit[nx][ny][block] == 0 && block == 1 && house[nx][ny] == 1) {
+                if(visit[nx][ny][block] == 0 && block == 1 && house[nx][ny] == 1) { //벽 O 안뚫림
                     q.push(make_pair(make_pair(nx, ny),block-1));
                     visit[nx][ny][block-1] = visit[a.first.first][a.first.second][block] + 1;
                 }
-                if(visit[nx][ny][block] == 0 && house[nx][ny] == 0) {
+                if(visit[nx][ny][block] == 0 && house[nx][ny] == 0) { //벽 X 안둟림
                     q.push(make_pair(make_pair(nx, ny),block));
                     visit[nx][ny][block] = visit[a.first.first][a.first.second][block] + 1;
                 }
