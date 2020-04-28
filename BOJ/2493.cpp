@@ -1,6 +1,11 @@
 // Stack 문제 
 
 
+// 순서대로 하나씩 입력을 받는데 s 에는 탑의 높이를, numbers에는 index를 저장한다
+// 하나하나씩 스택에 넣어주기 전에 그 앞의 것들(왼쪽)에 있기 때문에 스택에서 하나씩 빼내면서 비교를 한다.
+// 만약 스택의 것이 크면 위치를 출력해준다.
+// 그게 아니면 계속 끝까지 뒤져본다.
+
 #include <iostream>
 #include <math.h>
 #include <stack>
@@ -14,15 +19,14 @@ int main() {
     stack<int> numbers;
 //    int result[500001];
     
-    
-    scanf("%d", &N);
+    scanf("%d", &N); // 입력받기
     
     for(int i = 1; i <= N; i++) {
-        scanf("%d", &num);
-        if(s.empty()) {
+        scanf("%d", &num); // 갯수만큼 입력받기
+        if(s.empty()) { // 비어있으면 무조건 왼쪽 첫번째거임 
             s.push(num);
             numbers.push(i);
-            cout << "0 ";
+            cout << "0 "; // 출력
         }
         else {
             if(s.top() > num) {
@@ -33,7 +37,7 @@ int main() {
             else {
                 s.pop();
                 numbers.pop();
-                while(!numbers.empty()) {
+                while(!numbers.empty()) { // 빌때까지 
                     if(s.top() > num) {
                         cout << numbers.top() << " ";
                         s.push(num);
@@ -45,7 +49,7 @@ int main() {
                         numbers.pop();
                     }
                 }
-                if(numbers.empty()) {
+                if(numbers.empty()) { // 비어있으면 -> 즉 가장 높은 수신탑으로 왼쪽 수신탑들의 높이가 다 현재 비교하는 것보다 짧은 경우
                     cout << "0 ";
                     s.push(num);
                     numbers.push(i);
