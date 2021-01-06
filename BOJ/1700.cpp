@@ -58,7 +58,7 @@ int main() {
         ans++;
         v[val] = a[i];
     }
-    
+        
     cout << ans << endl;
     return 0;
 }
