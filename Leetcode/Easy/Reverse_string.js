@@ -1,3 +1,3 @@
 var reverseString = function(s) {
-    return s.reverse();
+    return s.reverse(); // js 문법
 };
