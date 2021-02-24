@@ -42,7 +42,7 @@ int main() {
     for(int i = 0; i < N; i++) {
         cin >> M;
         
-        map<string,int> f;
+        map<string,int> f; // map 으로 초기화
         int num = 1;
         
         for(int j = 1; j <= 2*M; j++) {
