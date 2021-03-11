@@ -5,13 +5,13 @@ using namespace std;
 
 #define INF 987654321
 
-int dist[502];
-vector<pair<int,int>> v[502];
+long long dist[502];
+vector<pair<long long,long long>> v[502];
 
 int main(){
     ios_base :: sync_with_stdio(false);
-  cin.tie(NULL);
-  cout.tie(NULL);
+    cin.tie(NULL);
+    cout.tie(NULL);
 
     int N,M;
     cin >> N >> M;
@@ -19,7 +19,8 @@ int main(){
     bool cycle = false;
 
     for(int i = 0; i < M; i++) { //vector에 넣기
-        int n1, n2, w;
+        int n1, n2;
+        long long w;
         cin >> n1 >> n2 >> w;
         v[n1].push_back(make_pair(n2,w));
     }
