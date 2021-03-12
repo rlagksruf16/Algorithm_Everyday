@@ -42,7 +42,7 @@ int main(){
         }
     }
     if(cycle)
-        cout << "-1\n";
+        cout << "-1\n"; // -1 출력 
     else {
         for(int i = 2; i <= N; i++) {
             if(dist[i] == INF)
